@@ -9,6 +9,6 @@ Database Management Systems Assignment 3 Q1
 - Copy `hibernate.properties.example` to `hibernate.properties` and replace the example data with your database credentials.
 
 ## Building / Running
-- Navigate to this project's root directory in your terminal
+- Navigate to the `java` directory
 - Run `mvn clean compile exec:exec`
 
