@@ -17,7 +17,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        
+        //Set up Session object to manage database transactions
         SessionFactory sFactory;
         Session session;
         Scanner input = new Scanner(System.in);
@@ -44,9 +44,9 @@ public class Main {
                 input.next();
             }
             option = input.nextInt();
-            input.nextLine();
+            input.nextLine(); //Reads leftover \n
             switch (option) {
-                case 1:
+                case 1: //Display All Student Records
                     List<Student> students = getAllStudents(session);
                     System.out.println("STUDENTS");
                     System.out.println("========");
@@ -54,7 +54,7 @@ public class Main {
                         System.out.printf("%d\t%s\t%s\t%s\t%s\n", s.getId(), s.getFName(), s.getLName(), s.getEmail(), s.getEDateString());
                     }
                     break;
-                case 2:
+                case 2: //Add a New Student
                     System.out.print("Enter student info [first_name last_name email enrollment_date(yyyy-mm-dd)]: ");
                     try{
                         Scanner line = new Scanner(input.nextLine());
@@ -72,7 +72,7 @@ public class Main {
                     
                     break;
                 
-                case 3:
+                case 3: //Update a Student's Email
                     System.out.print("Enter student ID: ");
                     int s_id;
                     try{
@@ -95,7 +95,7 @@ public class Main {
                     }
                     break;
                 
-                case 4:
+                case 4: //Delete a Student's Record
                     System.out.print("Enter student ID: ");
                     try{
                         s_id = input.nextInt();
@@ -115,7 +115,8 @@ public class Main {
             }
         }
         while (option != 0);
-        input.close();
+        //Program clean up
+        input.close(); 
         session.close();
     }
 
