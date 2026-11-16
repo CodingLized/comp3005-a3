@@ -12,3 +12,6 @@ Database Management Systems Assignment 3 Q1
 - Navigate to the `java` directory
 - Run `mvn clean compile exec:exec`
 
+## Demo Video
+- Link: https://vimeo.com/1247412290
+
